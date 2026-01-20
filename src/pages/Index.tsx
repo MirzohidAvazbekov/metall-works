@@ -39,7 +39,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[99vh] flex items-center">
+      <section className="relative min-h-[99vh] flex items-start sm:items-center">
         <div className="absolute inset-0">
           <img
             src={heroImage}
