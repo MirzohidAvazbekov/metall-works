@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&display=swap');
+
+/* Industrial Metal Manufacturing Design System */
+
+@layer base {
+  :root {
+    /* Industrial Dark Theme - Default */
+    --background: 220 20% 10%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 18% 14%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 18% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    /* Steel Blue Primary */
+    --primary: 210 60% 35%;
+    --primary-foreground: 210 20% 98%;
+
+    /* Metallic Gray Secondary */
+    --secondary: 215 15% 25%;
+    --secondary-foreground: 210 20% 95%;
+
+    /* Muted industrial tones */
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 15% 60%;
+
+    /* Copper/Orange Accent */
+    --accent: 25 80% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 18%;
+    --ring: 210 60% 40%;
+
+    --radius: 0.5rem;
+
+    /* Custom industrial colors */
+    --steel: 210 25% 45%;
+    --steel-dark: 210 30% 20%;
+    --copper: 25 80% 50%;
+    --copper-glow: 25 90% 55%;
+    --iron: 220 10% 30%;
+    --chrome: 210 5% 70%;
+
+    /* Gradients */
+    --gradient-steel: linear-gradient(135deg, hsl(210 60% 35%), hsl(210 50% 25%));
+    --gradient-copper: linear-gradient(135deg, hsl(25 80% 50%), hsl(15 85% 45%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 20% 12%), hsl(220 20% 8%));
+    --gradient-metal: linear-gradient(135deg, hsl(220 15% 25%), hsl(220 18% 18%));
+
+    /* Shadows */
+    --shadow-steel: 0 10px 40px -10px hsl(210 60% 35% / 0.3);
+    --shadow-copper: 0 10px 30px -10px hsl(25 80% 50% / 0.4);
+    --shadow-industrial: 0 25px 50px -12px hsl(220 20% 5% / 0.5);
+
+    --sidebar-background: 220 18% 12%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 210 60% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 20%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 220 15% 22%;
+    --sidebar-ring: 210 60% 40%;
+  }
+
+  .dark {
+    /* Same as root - dark is default */
+    --background: 220 20% 10%;
+    --foreground: 210 20% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Condensed', system-ui, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .industrial-gradient {
+    background: var(--gradient-metal);
+  }
+
+  .steel-glow {
+    box-shadow: var(--shadow-steel);
+  }
+
+  .copper-glow {
+    box-shadow: var(--shadow-copper);
+  }
+
+  .text-gradient-steel {
+    background: linear-gradient(135deg, hsl(210 60% 50%), hsl(210 40% 70%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-copper {
+    background: linear-gradient(135deg, hsl(25 80% 55%), hsl(35 85% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .metal-border {
+    border: 1px solid hsl(220 15% 25%);
+    background: linear-gradient(145deg, hsl(220 18% 16%), hsl(220 18% 12%));
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      to right,
+      hsl(220 20% 10% / 0.95) 0%,
+      hsl(220 20% 10% / 0.8) 50%,
+      hsl(220 20% 10% / 0.4) 100%
+    );
+  }
+}
+
+@layer utilities {
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(25 80% 50% / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(25 80% 50% / 0.5);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
